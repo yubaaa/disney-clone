@@ -66,11 +66,11 @@ const Slider = () => {
     return (
         <div>
             <HiChevronLeft
-                className='hidden md:block text-white text-[30px] absolute left-0 top-1/2 transform -translate-y-1/2 cursor-pointer bg-gradient-to-r from-black to-transparent'
+                className='hidden md:block text-white text-[30px] absolute left-0 top-1/2 transform -translate-y-1/2 cursor-pointer bg-gradient-to-r from-sky-900 to-transparent'
                 onClick={() => sliderLeft(elementRef.current)}
             />
             <HiChevronRight
-                className='hidden md:block text-white text-[30px] absolute right-0 top-1/2 transform -translate-y-1/2 cursor-pointer bg-gradient-to-l from-black to-transparent'
+                className='hidden md:block text-white text-[30px] absolute right-0 top-1/2 transform -translate-y-1/2 cursor-pointer bg-gradient-to-r from-sky-900 to-transparent'
                 onClick={() => sliderRight(elementRef.current)}
             />
             <div

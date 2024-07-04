@@ -2,6 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.movie-card-container {
+  position: relative;
+  width: 230px;
+  md:w-200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.text-container h2 {
+  display: inline-block;
+  animation: slideText 10s linear infinite;
+}
+
+.text-container:hover h2 {
+  animation-play-state: paused;
+}
+
+@keyframes slideText {
+  0% {
+      transform: translateX(100%);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

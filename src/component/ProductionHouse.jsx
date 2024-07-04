@@ -40,13 +40,38 @@ const ProductionHouse = () => {
         },
     ];
 
+    const handleMouseEnter = (event) => {
+        const video = event.currentTarget.querySelector('video');
+        video.currentTime = 0;
+        video.play();
+    };
+
+    const handleMouseLeave = (event) => {
+        const video = event.currentTarget.querySelector('video');
+        video.pause();
+        video.currentTime = 0;
+    };
+
     return (
-        <div className='relative flex gap-2 md:gap-5  p-2 px-5 md:px-16  '>
+        <div className='relative flex gap-2 md:gap-5 p-2 px-5 md:px-16'>
             {productionHouseList.map((item, index) => (
-                <div key={item.id} className='border-[2px] border-gray-600 rounded-lg hover:scale-110 transition-all duration-300 ease-in-out cursor-pointer  relative shadow-xl shadow-gray-800 '>
-                     <video src={item.video} autoPlay loop playsInline className='top-0 absolute object-cover overflow-hidden rounded-md z-0 opacity-0 hover:opacity-50 ' />
-                    <img src={item.image} alt={`production-house-${index}`} className='w-full z-[1]' />
-                   
+                <div
+                    key={item.id}
+                    className='border-[2px] border-gray-600 rounded-lg hover:scale-110 transition-all duration-300 ease-in-out cursor-pointer relative shadow-xl shadow-gray-800'
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                >
+                    <video
+                        src={item.video}
+                        loop
+                        playsInline
+                        className='top-0 absolute object-cover overflow-hidden rounded-md z-0 opacity-0 hover:opacity-50 transition-opacity duration-300'
+                    />
+                    <img
+                        src={item.image}
+                        alt={`production-house-${index}`}
+                        className='w-full z-[1]'
+                    />
                 </div>
             ))}
         </div>
