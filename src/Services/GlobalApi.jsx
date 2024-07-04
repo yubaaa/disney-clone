@@ -3,9 +3,15 @@ import axios from "axios"
 const movieBaseUrl="https://api.themoviedb.org/3"
 const api_key='931e11480fbe2c0bcc3412a9686631ac'
 
+
+const movieByGenreBaseURL='https://api.themoviedb.org/3/discover/movie?api_key=2ec0d66f5bdf1dd12eefa0723f1479cf';
+
 const getTrendingVideos=axios.get(movieBaseUrl+"/trending/all/day?api_key="+api_key);
 
-export default {
-    getTrendingVideos
+const getMovieByGenreId=(id)=>
+    axios.get(movieByGenreBaseURL+"&with_genres="+id);
 
+export default {
+    getTrendingVideos,
+    getMovieByGenreId
 };
